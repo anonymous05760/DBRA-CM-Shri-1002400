@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBRA CM SHRI School, Khichripur | School ID: 1002400</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                        },
+                        gold: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animations and utilities */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 28s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.85) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.95);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded font-semibold tracking-wide">
+                    <i class="fas fa-id-badge mr-1"></i> SCHOOL ID: 1002400
+                </span>
+                <span class="hidden sm:inline"><i class="fas fa-map-marker-alt text-amber-500 mr-1"></i> Khichripur, East Delhi - 110091</span>
+                <span class="hidden md:inline"><i class="fas fa-phone-alt text-amber-500 mr-1"></i> +91 11-2277-XXXX</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="openModal('portalModal')" class="hover:text-amber-400 transition font-medium flex items-center gap-1">
+                    <i class="fas fa-user-graduate"></i> Student/Parent Portal
+                </button>
+                <span class="text-slate-600">|</span>
+                <button onclick="openModal('admissionModal')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-2.5 py-0.5 rounded transition">
+                    Admissions Open
+                </button>
+                <button id="themeToggle" aria-label="Toggle Dark Mode" class="ml-2 p-1 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-400 transition">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Notice Ticker -->
+    <div class="bg-blue-900 text-white text-sm py-2 overflow-hidden flex items-center border-b border-blue-800">
+        <div class="bg-amber-500 text-slate-950 font-bold px-4 py-1 text-xs uppercase tracking-wider z-10 shadow-md flex items-center gap-1.5 shrink-0">
+            <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span> Announcements
+        </div>
+        <div class="overflow-hidden w-full">
+            <div class="animate-marquee font-medium text-blue-100">
+                ★ Welcome to DBRA CM SHRI School, Khichripur (School ID: 1002400) — Empowering Future Leaders through Holistic & NEP 2020 Aligned Education &nbsp;&nbsp;|&nbsp;&nbsp; ★ Online Registration for Academic Session 2026-27 is Now Live! &nbsp;&nbsp;|&nbsp;&nbsp; ★ Annual Science, Robotics & Innovation Exhibition scheduled for next Friday &nbsp;&nbsp;|&nbsp;&nbsp; ★ Parent-Teacher Meeting (PTM) for Classes VI to XII on Saturday from 9:00 AM to 12:30 PM.
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-900 to-indigo-700 flex items-center justify-center text-amber-400 shadow-lg group-hover:scale-105 transition">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="font-serif font-bold text-lg sm:text-xl text-blue-950 dark:text-white leading-tight">
+                                DBRA CM SHRI SCHOOL
+                            </h1>
+                        </div>
+                        <p class="text-xs font-semibold text-amber-600 dark:text-amber-400 tracking-wider uppercase">
+                            Khichripur, Delhi • ID: 1002400
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    <a href="#home" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-700 dark:hover:text-amber-400 transition">About & Principal</a>
+                    <a href="#academics" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Academics</a>
+                    <a href="#facilities" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Campus & Labs</a>
+                    <a href="#notices" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Notice Board</a>
+                    <a href="#gallery" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Gallery</a>
+                    <a href="#contact" class="hover:text-blue-700 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openModal('admissionModal')" class="hidden sm:inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 dark:bg-amber-500 dark:hover:bg-amber-600 text-white dark:text-slate-950 px-4 py-2.5 rounded-lg text-sm font-bold shadow transition">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#home" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Home</a>
+            <a href="#about" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About & Principal</a>
+            <a href="#academics" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Academics</a>
+            <a href="#facilities" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Campus & Labs</a>
+            <a href="#notices" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Notice Board</a>
+            <a href="#gallery" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Gallery</a>
+            <a href="#contact" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Contact</a>
+            <div class="pt-2 flex gap-2">
+                <button onclick="openModal('admissionModal')" class="w-full bg-amber-500 text-slate-950 font-bold py-2.5 rounded-lg">Apply for Admission</button>
+                <button onclick="openModal('portalModal')" class="w-full bg-blue-900 text-white font-bold py-2.5 rounded-lg">Student Portal</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 lg:py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-amber-300 text-xs sm:text-sm font-semibold">
+                        <i class="fas fa-award"></i>
+                        <span>Directorate of Education, Govt. of NCT of Delhi • School ID: 1002400</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Nurturing Excellence at <span class="text-amber-400">DBRA CM SHRI</span> Khichripur
+                    </h2>
+                    <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+                        Inspired by Dr. B.R. Ambedkar's vision of transformative education, our school blends modern STEM innovation, experiential NEP 2020 pedagogy, and strong civic values to prepare every learner for global success.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="openModal('admissionModal')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fas fa-file-signature"></i> Online Admission Inquiry
+                        </button>
+                        <a href="#academics" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-7 py-3.5 rounded-xl transition flex items-center gap-2">
+                            <i class="fas fa-book-open"></i> Explore Curriculum
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick School Info Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-5">
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-amber-400 font-bold">Official School Profile</p>
+                                <h3 class="text-xl font-bold text-white">Institutional Highlights</h3>
+                            </div>
+                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full">
+                                Active Session
+                            </span>
+                        </div>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                                <span class="text-slate-400"><i class="fas fa-hashtag text-amber-400 w-5"></i> School ID</span>
+                                <span class="font-bold text-white font-mono bg-slate-800 px-2.5 py-0.5 rounded">1002400</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                                <span class="text-slate-400"><i class="fas fa-school text-amber-400 w-5"></i> Institution</span>
+                                <span class="font-semibold text-white text-right">DBRA CM SHRI School</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                                <span class="text-slate-400"><i class="fas fa-map-pin text-amber-400 w-5"></i> Location</span>
+                                <span class="font-semibold text-white">Khichripur, Delhi</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                                <span class="text-slate-400"><i class="fas fa-certificate text-amber-400 w-5"></i> Affiliation</span>
+                                <span class="font-semibold text-white">CBSE / DBSE Aligned</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-slate-400"><i class="fas fa-clock text-amber-400 w-5"></i> School Timings</span>
+                                <span class="font-semibold text-white">7:30 AM – 1:30 PM</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-4 border-t border-slate-700 grid grid-cols-2 gap-3">
+                            <button onclick="openModal('portalModal')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-2.5 px-3 rounded-lg transition text-center">
+                                <i class="fas fa-poll mr-1"></i> Check Exam Results
+                            </button>
+                            <a href="#notices" class="bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-bold py-2.5 px-3 rounded-lg transition text-center">
+                                <i class="fas fa-download mr-1"></i> Circulars & Syllabus
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Key Statistics -->
+    <section class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-900 dark:text-amber-400 counter" data-target="1850">0</div>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">Enrolled Students</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-900 dark:text-amber-400 counter" data-target="78">0</div>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">Dedicated Faculty</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-900 dark:text-amber-400 counter" data-target="98">0</div>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">Board Pass %</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-900 dark:text-amber-400 counter" data-target="24">0</div>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">Smart Classrooms & Labs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Principal's Message -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-amber-600 dark:text-amber-400 font-bold text-sm uppercase tracking-widest">About Our Institution</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    Empowering Minds with Knowledge, Character & Innovation
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <strong>DBRA CM SHRI School, Khichripur (School ID: 1002400)</strong> stands as a flagship center of academic excellence in East Delhi. Guided by the ideals of Bharat Ratna Dr. B.R. Ambedkar and the transformative CM SHRI modernization framework, our campus provides state-of-the-art learning infrastructure accessible to all sections of society.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 flex items-center justify-center shrink-0">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">NEP 2020 Ready</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Skill-based, critical thinking & competency-driven learning.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
+                        <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 flex items-center justify-center shrink-0">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Inclusive Excellence</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Equal opportunity, mentorship & holistic student welfare.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principal's Desk Card -->
+            <div class="lg:col-span-6">
+                <div class="bg-gradient-to-br from-blue-950 to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-10 text-9xl p-4">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-2xl font-bold shadow-lg">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-amber-400 font-bold">From the Principal's Desk</span>
+                            <h3 class="text-xl font-bold">Head of School</h3>
+                            <p class="text-xs text-slate-300">DBRA CM SHRI School, Khichripur (ID: 1002400)</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-200 italic leading-relaxed text-sm sm:text-base mb-6">
+                        "Education is the most powerful instrument for social transformation and personal empowerment. At DBRA CM SHRI Khichripur, we strive not only for stellar academic results, but to cultivate compassionate, curious, and responsible citizens ready to lead India into the future."
+                    </blockquote>
+                    <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800 pt-4">
+                        <span><i class="fas fa-check-circle text-amber-400 mr-1"></i> Holistic Development</span>
+                        <span><i class="fas fa-check-circle text-amber-400 mr-1"></i> 21st Century Skills</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics & Streams (Interactive Tabs) -->
+    <section id="academics" class="py-20 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-bold text-sm uppercase tracking-widest">Academic Programs</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
+                    Structured Pathways for Every Learner
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-sm sm:text-base">
+                    Explore our foundational, middle, secondary, and senior secondary academic programs designed for conceptual clarity and career readiness.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="academicTabs">
+                <button onclick="switchTab('middle')" class="tab-btn active bg-blue-900 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow transition" data-tab="middle">
+                    Middle Wing (VI – VIII)
+                </button>
+                <button onclick="switchTab('secondary')" class="tab-btn bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-full text-sm font-bold shadow transition" data-tab="secondary">
+                    Secondary Wing (IX – X)
+                </button>
+                <button onclick="switchTab('senior')" class="tab-btn bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-full text-sm font-bold shadow transition" data-tab="senior">
+                    Senior Secondary (XI – XII)
+                </button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div id="tab-middle" class="tab-content grid md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Foundational STEM & Coding</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Hands-on science experiments, computational thinking, robotics basics, and mathematical logic.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Multilingual Proficiency</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Strong communication skills in English, Hindi, and Sanskrit with interactive language lab sessions.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Arts, Sports & Bagless Days</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Experiential workshops, visual arts, music, yoga, and physical education for balanced growth.</p>
+                </div>
+            </div>
+
+            <div id="tab-secondary" class="tab-content hidden grid md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Board Exam Excellence</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Structured mentorship, regular diagnostic assessments, and remedial support for Class X Board readiness.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Artificial Intelligence & IT</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Dedicated skill subjects including AI, Information Technology, and Financial Literacy.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Career Guidance & Counseling</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Aptitude testing and one-on-one stream selection counseling for Class X students.</p>
+                </div>
+            </div>
+
+            <div id="tab-senior" class="tab-content hidden grid md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Science Stream (PCM / PCB)</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Physics, Chemistry, Mathematics, Biology, and Computer Science with JEE/NEET foundation orientation.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Commerce Stream</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Accountancy, Business Studies, Economics, Applied Maths, and Entrepreneurship projects.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Humanities & Liberal Arts</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">History, Political Science, Geography, Sociology, Psychology, and CUET competitive preparation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Facilities -->
+    <section id="facilities" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <span class="text-amber-600 dark:text-amber-400 font-bold text-sm uppercase tracking-widest">World-Class Infrastructure</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
+                    CM SHRI Smart Campus Facilities
+                </h2>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 max-w-md">
+                Modernized classrooms, digital libraries, and specialized labs designed to foster curiosity and safety.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-tv text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Interactive Smart Classrooms</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Equipped with 4K interactive flat panels, high-speed internet, and digital 3D learning modules.</p>
+            </div>
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-robot text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Atal Tinkering & Robotics Lab</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">3D printers, IoT kits, microcontrollers, and prototyping tools for young student innovators.</p>
+            </div>
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-book-reader text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Dr. Ambedkar Digital Library</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Over 12,000+ books, competitive exam periodicals, e-journals, and quiet reading zones.</p>
+            </div>
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-flask text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Modern Science Laboratories</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Separate, safety-certified Physics, Chemistry, Biology, and Mathematics laboratories.</p>
+            </div>
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-futbol text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Sports & Athletics Complex</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Courts for Basketball, Volleyball, Badminton, Athletics track, and indoor chess/yoga rooms.</p>
+            </div>
+            <div class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-amber-400 transition shadow-sm">
+                <i class="fas fa-shield-alt text-3xl text-blue-800 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+                <h3 class="font-bold text-lg mb-2">Safe & Green Eco-Campus</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">24x7 CCTV surveillance, RO drinking water stations, solar power integration, and medical room.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Board & Events Calendar -->
+    <section id="notices" class="py-20 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8">
+                <!-- Interactive Searchable Notice Board -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white">
+                                <i class="fas fa-bullhorn text-amber-500 mr-2"></i>Notice Board & Circulars
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Official notifications for School ID: 1002400</p>
+                        </div>
+                        <div class="relative">
+                            <input type="text" id="noticeSearch" onkeyup="filterNotices()" placeholder="Search circulars..." class="w-full sm:w-56 pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-600">
+                            <i class="fas fa-search absolute left-3 top-3 text-slate-400 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div id="noticeList" class="space-y-3 max-h-96 overflow-y-auto pr-1">
+                        <div class="notice-item p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">New</span>
+                                    <span class="text-xs text-slate-500">Nov 18, 2026</span>
+                                </div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Pre-Board Examination Date Sheet for Classes X & XII</h4>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Theory and practical schedules for all streams are now available for download.</p>
+                            </div>
+                            <button onclick="showToast('Downloading Pre-Board Date Sheet PDF...')" class="shrink-0 text-blue-700 dark:text-amber-400 hover:underline text-xs font-bold flex items-center gap-1">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                        </div>
+
+                        <div class="notice-item p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Admission</span>
+                                    <span class="text-xs text-slate-500">Nov 14, 2026</span>
+                                </div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">DBRA CM SHRI Entrance & Merit Admission Guidelines</h4>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Important instructions regarding document verification and eligibility criteria.</p>
+                            </div>
+                            <button onclick="showToast('Downloading Admission Guidelines PDF...')" class="shrink-0 text-blue-700 dark:text-amber-400 hover:underline text-xs font-bold flex items-center gap-1">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                        </div>
+
+                        <div class="notice-item p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Welfare</span>
+                                    <span class="text-xs text-slate-500">Nov 10, 2026</span>
+                                </div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Scholarship & Uniform Direct Benefit Transfer (DBT) Verification</h4>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Parents are requested to ensure Aadhaar seeding of student bank accounts.</p>
+                            </div>
+                            <button onclick="showToast('Downloading Scholarship Circular PDF...')" class="shrink-0 text-blue-700 dark:text-amber-400 hover:underline text-xs font-bold flex items-center gap-1">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                        </div>
+
+                        <div class="notice-item p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 flex items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Event</span>
+                                    <span class="text-xs text-slate-500">Nov 05, 2026</span>
+                                </div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Zonal Level Cultural & Debate Competition Participation</h4>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Registration open for students in Hindi/English Debate, Painting, and Folk Music.</p>
+                            </div>
+                            <button onclick="showToast('Downloading Event Circular PDF...')" class="shrink-0 text-blue-700 dark:text-amber-400 hover:underline text-xs font-bold flex items-center gap-1">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events & Academic Calendar -->
+                <div class="lg:col-span-5 bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                        <i class="fas fa-calendar-alt text-blue-700 dark:text-amber-400 mr-2"></i>Upcoming Events
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/60 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                            <div class="w-14 h-14 rounded-xl bg-blue-900 text-white flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold uppercase text-amber-400">Nov</span>
+                                <span class="text-xl font-extrabold leading-none">26</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Constitution Day (Samvidhan Divas)</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Preamble Reading, Quiz & Assembly • 8:30 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/60 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                            <div class="w-14 h-14 rounded-xl bg-amber-500 text-slate-950 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold uppercase">Dec</span>
+                                <span class="text-xl font-extrabold leading-none">05</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">STEM & Robotics Innovation Fair</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">School Auditorium & ATL Lab • 10:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/60 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-700 text-white flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold uppercase">Dec</span>
+                                <span class="text-xl font-extrabold leading-none">14</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Mega Parent-Teacher Meeting</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">All Classes (VI - XII) • 9:00 AM - 12:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/60 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                            <div class="w-14 h-14 rounded-xl bg-indigo-700 text-white flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold uppercase">Dec</span>
+                                <span class="text-xl font-extrabold leading-none">22</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">National Mathematics Day Olympiad</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Inter-House Quiz & Ramanujan Tribute</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Gallery with Filter -->
+    <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-amber-600 dark:text-amber-400 font-bold text-sm uppercase tracking-widest">Life at DBRA CM SHRI</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Campus Gallery</h2>
+        </div>
+
+        <div class="flex justify-center gap-2 mb-8">
+            <button onclick="filterGallery('all')" class="gal-btn bg-blue-900 text-white px-4 py-1.5 rounded-full text-xs font-bold">All</button>
+            <button onclick="filterGallery('labs')" class="gal-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold">Labs & Smart Class</button>
+            <button onclick="filterGallery('events')" class="gal-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold">Events & Sports</button>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="gal-item labs group relative rounded-2xl overflow-hidden shadow-md h-64">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Classroom" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase">Academics</span>
+                        <h4 class="text-white font-bold">Digital Smart Classrooms</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="gal-item labs group relative rounded-2xl overflow-hidden shadow-md h-64">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Science Laboratory" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase">STEM</span>
+                        <h4 class="text-white font-bold">Advanced Science & Chemistry Lab</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="gal-item events group relative rounded-2xl overflow-hidden shadow-md h-64">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Library" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase">Knowledge Hub</span>
+                        <h4 class="text-white font-bold">School Library & Reading Hall</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-400 font-bold text-sm uppercase tracking-widest">Get in Touch</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold">Contact School Administration</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Have questions regarding admissions, transfer certificates (TC), academic programs, or student welfare? Reach out to our administrative office.
+                    </p>
+
+                    <div class="space-y-4 pt-2 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">DBRA CM SHRI School, Khichripur</h4>
+                                <p class="text-slate-400">School ID: 1002400 • Directorate of Education, Delhi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Campus Address</h4>
+                                <p class="text-slate-400">Khichripur, Kalyanpuri Zone, East Delhi, Delhi - 110091</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Official Email</h4>
+                                <p class="text-slate-400">1002400@edudel.nic.in / dbracmshri.khichripur@delhi.gov.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback / Inquiry Form -->
+                <div class="lg:col-span-7 bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6">Send a Direct Message</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+                                <input type="text" required placeholder="Parent / Student Name" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
+                                <input type="tel" required placeholder="+91 98XXXXXXXX" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                                <input type="email" placeholder="example@email.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Subject</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <option>Admission Inquiry</option>
+                                    <option>Transfer Certificate (TC)</option>
+                                    <option>Academic / Examination Query</option>
+                                    <option>General Feedback</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Message *</label>
+                            <textarea rows="3" required placeholder="Write your message here..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-white">DBRA CM SHRI School, Khichripur (School ID: 1002400)</p>
+                <p class="text-xs mt-1">Directorate of Education, Government of NCT of Delhi. All Rights Reserved.</p>
+            </div>
+            <div class="flex space-x-5 text-xs">
+                <a href="#home" class="hover:text-amber-400">Home</a>
+                <a href="#academics" class="hover:text-amber-400">Academics</a>
+                <a href="#notices" class="hover:text-amber-400">Circulars</a>
+                <button onclick="openModal('portalModal')" class="hover:text-amber-400">Student Login</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Online Admission Registration -->
+    <div id="admissionModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 relative">
+            <button onclick="closeModal('admissionModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded">School ID: 1002400</span>
+            <h3 class="font-serif text-2xl font-bold mt-2 text-slate-900 dark:text-white">Admission Registration Form</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Session 2026-27 • DBRA CM SHRI School, Khichripur</p>
+
+            <form onsubmit="handleAdmissionSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold mb-1">Student's Full Name *</label>
+                    <input type="text" required placeholder="Enter student name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Applying for Class *</label>
+                        <select required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                            <option value="">Select Class</option>
+                            <option>Class VI</option>
+                            <option>Class VII</option>
+                            <option>Class VIII</option>
+                            <option>Class IX</option>
+                            <option>Class XI (Science)</option>
+                            <option>Class XI (Commerce)</option>
+                            <option>Class XI (Humanities)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Date of Birth *</label>
+                        <input type="date" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Parent / Guardian Mobile *</label>
+                    <input type="tel" required placeholder="10-digit mobile number" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Previous School Name</label>
+                    <input type="text" placeholder="Current/Previous school" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-xl transition shadow">
+                    Submit Admission Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Student / Result Portal -->
+    <div id="portalModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 relative">
+            <button onclick="closeModal('portalModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-amber-400 flex items-center justify-center text-2xl mx-auto mb-3">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-slate-900 dark:text-white">Student & Result Portal</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">DBRA CM SHRI Khichripur • ID: 1002400</p>
+            </div>
+
+            <form onsubmit="handlePortalLookup(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold mb-1">Student ID / Roll Number</label>
+                    <input type="text" id="studentIdInput" required placeholder="e.g., 202610024001" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Class</label>
+                    <select class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-sm">
+                        <option>Class VI</option>
+                        <option>Class VII</option>
+                        <option>Class VIII</option>
+                        <option>Class IX</option>
+                        <option>Class X</option>
+                        <option>Class XI</option>
+                        <option>Class XII</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl transition">
+                    View Attendance & Report Card
+                </button>
+            </form>
+
+            <!-- Demo Result Preview Box -->
+            <div id="portalResultBox" class="hidden mt-5 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-xs">
+                <div class="flex justify-between font-bold text-emerald-800 dark:text-emerald-300 mb-2">
+                    <span>Student Record Verified</span>
+                    <span>Attendance: 94.5%</span>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300">Mid-Term Aggregate: <strong>89.2% (Grade A1)</strong></p>
+                <p class="text-slate-500 dark:text-slate-400 mt-1">Status: Eligible for Merit Scholarship</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-700 text-sm font-medium flex items-center gap-3">
+        <i class="fas fa-check-circle text-emerald-400"></i>
+        <span id="toastMsg">Action completed!</span>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Academic Tabs Switcher
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-900', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-200');
+            });
+            const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+            activeBtn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-200');
+            activeBtn.classList.add('bg-blue-900', 'text-white');
+        }
+
+        // Notice Search Filter
+        function filterNotices() {
+            const query = document.getElementById('noticeSearch').value.toLowerCase();
+            document.querySelectorAll('.notice-item').forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        // Gallery Filter
+        function filterGallery(category) {
+            document.querySelectorAll('.gal-item').forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modals
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3500);
+        }
+
+        // Form Handlers
+        function handleAdmissionSubmit(e) {
+            e.preventDefault();
+            closeModal('admissionModal');
+            const refId = 'CM1002400-' + Math.floor(1000 + Math.random() * 9000);
+            showToast('Application Submitted! Reference ID: ' + refId);
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Your inquiry has been sent to School ID 1002400.');
+            e.target.reset();
+        }
+
+        function handlePortalLookup(e) {
+            e.preventDefault();
+            document.getElementById('portalResultBox').classList.remove('hidden');
+            showToast('Student record retrieved successfully.');
+        }
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const increment = target / 50;
+            const updateCount = () => {
+                const count = +counter.innerText;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 25);
+                } else {
+                    counter.innerText = target + (target === 98 ? '%' : '+');
+                }
+            };
+            updateCount();
+        });
+    </script>
+</body>
+</html>
