@@ -1230,5 +1230,26 @@
         // Initial Render
         syncAuthUI();
     </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDe6iEaXuum8MKToOuznuQhyiJyFPYJB1I",
+            authDomain: "dbra-cm-shri-1002400.firebaseapp.com",
+            projectId: "dbra-cm-shri-1002400",
+            storageBucket: "dbra-cm-shri-1002400.firebasestorage.app",
+            messagingSenderId: "750404940687",
+            appId: "1:750404940687:web:66cd9660ed8cf06a6691fa",
+            measurementId: "G-2S8Q1EMJQW"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>
