@@ -44,3 +44,4 @@ Security & Privacy Notes
 Client-Side Prototype Scope: If state is kept in browser memory or client-side storage without a backend session server, treat this as a front-end prototype rather than a production database.
 
 Real Student Data: Avoid storing sensitive personal data (such as government IDs, contact details, or financial/DBT records) in unencrypted browser storage on shared or public computers.
+<img width="1353" height="646" alt="image" src="https://github.com/user-attachments/assets/b795150e-d2c8-401c-ae7c-397851ecd6d2" />
