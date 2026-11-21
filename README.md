@@ -1,4 +1,4 @@
-DBRA CM SHRI School, Khichripur — School Portal & Private Student ERP
+**DBRA CM SHRI School, Khichripur **— School Portal & Private Student ERP
 A web portal for DBRA CM SHRI School, Khichripur (School ID: 1002400) featuring a public-safe homepage and a restricted, role-based Student Academic & Bio-Data Registry unlocked exclusively for authenticated Teachers / Employees and the Principal.
 
 Key Features
