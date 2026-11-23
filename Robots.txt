@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /DBRA-CM-Shri-1002400/
+Disallow: /DBRA-CM-Shri-1002400/private/
+
+Sitemap: https://anonymous05760.github.io/DBRA-CM-Shri-1002400/sitemap.xml
